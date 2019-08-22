@@ -1,11 +1,14 @@
 {
   "name": "simple-loading-bar",
   "version": "1.0.1",
-  "description": "",
+  "description": "A simple loading bar inside of a webcomponent.",
+  "keywords": ["loadingbar", "loading"],
+  "homepage": "https://github.com/protronic/simple-loading-bar",
+
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Robert Seidler",
+  "author": "Robert Seidler <r.seidler@protronic-gmbh.de>",
   "license": "ISC"
 }
