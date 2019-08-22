@@ -64,8 +64,8 @@
         </style>  
         <label id="percentage">${Math.floor(this.progress / this.end * 100)} %</label>
         <svg id="lbar" style="border: 1px solid gray; border-radius: 10px;">
-          <rect x="0" y="0" width="${this.width * (this.end / this.end)}" height="${this.height}" stroke="gray" fill="${this.backgroundColor}"/>
-          <rect x="0" y="0" width="${this.width * (this.progress / this.end)}" height="${this.height}" stroke="gray" fill="${this.color}"/>
+          <rect x="0" y="0" rx="10" ry="10" width="${this.width * (this.end / this.end)}" height="${this.height}" stroke="gray" fill="${this.backgroundColor}"/>
+          <rect x="0" y="0" rx="10" ry="10" width="${this.width * (this.progress / this.end)}" height="${this.height}" stroke="gray" fill="${this.color}"/>
         </svg>
         `
         
@@ -109,8 +109,8 @@
       let label = this.shadowRoot.querySelector('#percentage');
       
       svg.innerHTML = `
-      <rect x="0" y="0" width="${this.width * (this.end / this.end)}" height="${this.height}" stroke="gray" fill="${this.backgroundColor}"/>
-      <rect x="0" y="0" width="${this.width * (this.progress / this.end)}" height="${this.height}" stroke="gray" fill="${this.color}"/>
+      <rect x="0" y="0" rx="10" ry="10" width="${this.width * (this.end / this.end)}" height="${this.height}" stroke="gray" fill="${this.backgroundColor}"/>
+      <rect x="0" y="0" rx="10" ry="10" width="${this.width * (this.progress / this.end)}" height="${this.height}" stroke="gray" fill="${this.color}"/>
       `
       svg.style.border = '1px solid gray'
       svg.style.borderRadius = '10px'
@@ -118,6 +118,10 @@
       label.innerHTML = `${Math.floor(this.progress / this.end * 100) } %`
       label.style.width = `${this.width}px`
       label.style.height = `${this.height}px`
+    }
+
+    reset(){
+      this.progress = this.start;
     }
     
   }
