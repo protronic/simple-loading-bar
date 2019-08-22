@@ -1,6 +1,7 @@
 A simple loading bar inside of a webcomponent.
 
 [JSFiddle](https://jsfiddle.net/razoth/cdet9o7q/3/)
+[Preview](https://unpkg.com/simple-loading-bar@1.0.2/index.html)
 
 # Installation
 
