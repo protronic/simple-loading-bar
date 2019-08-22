@@ -45,6 +45,8 @@
           svg {
             width: var(--width);
             height: var(--height);
+            border: 1px solid gray; 
+            border-radius: 10px;
           }
 
           label {
@@ -58,20 +60,14 @@
           }
 
         </style>  
-        <label id="percentage">${Math.floor(this.progress / this.end * 100)} %</label>
-        <svg id="lbar" style="border: 1px solid gray; border-radius: 10px;">
-          <rect x="0" y="0" rx="10" ry="10" width="${this.width * (this.end / this.end)}" height="${this.height}" stroke="gray" fill="${this.backgroundColor}"/>
-          <rect x="0" y="0" rx="10" ry="10" width="${this.width * (this.progress / this.end)}" height="${this.height}" stroke="gray" fill="${this.color}"/>
-        </svg>
+        <label id="percentage"></label>
+        <svg id="lbar"></svg>
         `
         
-        // this.svg = document.createElement('svg');
-        // this.svg.appendChild(document.createElement('rect'))
-
-        // container.appendChild(this.svg)
-
         this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(container); 
+        
+        this.reDraw();
       }
     }
   
@@ -79,14 +75,6 @@
       console.log('Attribute was changed.');
       this.reDraw()
       console.log(name, newValue)
-    }
-
-    setHeight(newHeight){
-
-    }
-
-    setWidth(newWidth){
-      
     }
 
     addProgress(newProgress){
