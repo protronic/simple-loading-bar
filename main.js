@@ -1,6 +1,4 @@
 (function(){
-  console.log('entrypoint')
-
   class LoadingBar extends HTMLElement {
 
     static get observedAttributes(){
@@ -21,9 +19,7 @@
       this.backgroundColor = 'white';
     }
   
-    connectedCallback(){
-      console.log('connected')
-  
+    connectedCallback(){  
       this.start = this.getAttribute('start') || this.start;
       this.progress = this.getAttribute('progress') || this.progress;
       this.end = this.getAttribute('end') || this.end;
@@ -80,7 +76,7 @@
     }
   
     attributeChangedCallback(name, oldValue, newValue) {
-      console.log('Custom loadingbar element attributes changed.');
+      console.log('Attribute was changed.');
       this.reDraw()
       console.log(name, newValue)
     }
