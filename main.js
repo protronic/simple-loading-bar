@@ -32,7 +32,7 @@
 
       if (!this.shadowRoot) {
         const container = document.createElement('div');
-
+        container.style.position = 'relative'
         container.innerHTML = `
         <style>
           :host {
@@ -53,7 +53,6 @@
             top: 0px; 
             width: ${this.width}px; 
             height: ${this.height}px; 
-            margin: 10px;
             text-align: center;
           }
 
