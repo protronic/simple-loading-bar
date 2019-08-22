@@ -53,6 +53,7 @@
             top: 0px; 
             width: ${this.width}px; 
             height: ${this.height}px; 
+            margin: 1px;
             text-align: center;
           }
 
