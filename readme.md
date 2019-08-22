@@ -1,3 +1,5 @@
+A simple loading bar inside of a webcomponent.
+
 [JSFiddle](https://jsfiddle.net/razoth/cdet9o7q/3/)
 
 # Installation
