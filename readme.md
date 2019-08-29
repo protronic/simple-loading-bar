@@ -1,7 +1,26 @@
-A simple loading bar inside of a webcomponent.
+A simple loading bar as a webcomponent without externel dependencies (~3KB).
 
 [JSFiddle](https://jsfiddle.net/razoth/cdet9o7q/3/) | 
 [Preview](https://unpkg.com/simple-loading-bar@1.0.2/index.html)
+
+<!--
+```
+<custom-element-demo>
+  <template>
+    <script src="main.js"></script>
+    <simple-loading-bar end="2300" color="lightyellow" height="20" backgroundColor="lightgray"></simple-loading-bar>
+    <script>
+      s = document.querySelector('simple-loading-bar')
+      setInterval(function(){
+        if (s.addProgress(10) == 2300){
+          s.reset()
+        }
+      }, 100)
+    </script>
+  </template>
+</custom-element-demo>
+```
+-->
 
 # Installation
 
@@ -17,7 +36,7 @@ import the module depending on envirement. Exmpl.:
 require('simple-loading-bar')
 ```
 
-afterwards it can be used by creating a new element and be manipulated:
+It can be used by creating a new element and setting appropriate starting values (end is the most important one, describing 100%):
 ```javascript
 let loadingbar = document.createElement('simple-loading-bar')
 
@@ -26,7 +45,18 @@ loadingbar.width = 400;
 loadingbar.height = 20;
 loadingbar.color = 'lightgreen';
 loadingbar.backgroundColor = 'lightgray';
+
+document.body.append(loadingbar)
 ```
+Start values should  be set before adding it to the DOM.
+
+Finally you can add progress by calling:
+```javascript
+loadingbar.addProgress(100)
+```
+
+It automatically stops at 100%.
+
 
 # License 
 
